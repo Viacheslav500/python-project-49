@@ -25,9 +25,9 @@ def main():
                   f"Correct answer was '{make_answer(number)}'.\n"
                   f"Let's try again, {user_name}!"
                   )
-            count = 0
             break
-    print(f'Congratulations, {user_name}!')
+    if count == 3:
+        print(f'Congratulations, {user_name}!')
 
 
 if __name__ == "__main__":
