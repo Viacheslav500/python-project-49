@@ -26,6 +26,7 @@ def main():
                   f"Let's try again, {user_name}!"
                   )
             count = 0
+            break
     print(f'Congratulations, {user_name}!')
 
 
