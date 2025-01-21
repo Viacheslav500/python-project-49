@@ -30,7 +30,6 @@ def make_answer(user_answer: str, right_answer: str):
               f"Correct answer was '{right_answer}'.\n"
               f"Let's try again, {user_name}!"
               )
-        break
 
 
 def main():
@@ -40,6 +39,8 @@ def main():
         user_answer = input('Your answer: ')
         right_answer = 'yes' if is_prime(random_number) else 'no'
         make_answer(user_answer, right_answer)
+        if right_answer != user_answer:
+            break
     if count == 3:
         print(f'Congratulations, {user_name}!')
 

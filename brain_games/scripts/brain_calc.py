@@ -32,7 +32,7 @@ def main():
                 f"Let's try again, {user_name}!"
             )
             break
-    if count ==3: 
+    if count == 3:
         print(f'Congratulations, {user_name}!')
 
 

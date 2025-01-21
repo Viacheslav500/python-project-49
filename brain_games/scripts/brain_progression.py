@@ -12,14 +12,15 @@ def main():
         col = list()
         for _ in range(10):
             number = start
-            col.append(number)
+            col.append(str(number))
             start += step
-        progression = sorted(col)
+        progression = col
         missing_index = random.randint(0, len(progression) - 1)
         right_answer = progression[missing_index]
         progression[missing_index] = '..'
-        print(*progression)
-        user_answer = int(input('Your answer: '))
+        progression_str = ' '.join(progression)
+        print(f'Question: {progression_str}')
+        user_answer = input('Your answer: ')
         if user_answer == right_answer:
             print('Correct!')
             count += 1
