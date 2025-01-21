@@ -29,9 +29,9 @@ def main():
                   f"Correct answer was '{right_answer}'.\n"
                   f"Let's try again, {user_name}!"
                   )
-            count = 0
-            step = random.randint(1, 11)
-    print(f'Congratulations, {user_name}!')
+            break
+    if count == 3:
+        print(f'Congratulations, {user_name}!')
 
 
 if __name__ == "__main__":

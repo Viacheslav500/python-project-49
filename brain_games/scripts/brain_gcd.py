@@ -26,7 +26,7 @@ def main():
                   f"Correct answer was '{answer}'.\n"
                   f"Let's try again, {user_name}!"
                   )
-            count = 0
+            break
     if count == 3:
         print(f'Congratulations, {user_name}!')
 
