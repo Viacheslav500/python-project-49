@@ -1,38 +1,12 @@
-import random
-from brain_games.cli import welcome_user
+from brain_games.games.progression import make_progression
+from brain_games.engine import run_game
+
+
+TASK = 'What number is missing in the progression?'
 
 
 def main():
-    step = random.randint(1, 11)
-    start = random.randrange(1, 101)
-    count = 0
-    user_name = welcome_user()
-    print('What number is missing in the progression?')
-    while count != 3:
-        col = list()
-        for _ in range(10):
-            number = start
-            col.append(str(number))
-            start += step
-        progression = col
-        missing_index = random.randint(0, len(progression) - 1)
-        right_answer = progression[missing_index]
-        progression[missing_index] = '..'
-        progression_str = ' '.join(progression)
-        print(f'Question: {progression_str}')
-        user_answer = input('Your answer: ')
-        if user_answer == right_answer:
-            print('Correct!')
-            count += 1
-            step = random.randint(1, 11)
-        else:
-            print(f"'{user_answer}' is wrong answer ;(."
-                  f"Correct answer was '{right_answer}'.\n"
-                  f"Let's try again, {user_name}!"
-                  )
-            break
-    if count == 3:
-        print(f'Congratulations, {user_name}!')
+    run_game(make_progression, TASK)
 
 
 if __name__ == "__main__":
